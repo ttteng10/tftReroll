@@ -1,0 +1,120 @@
+.InterfaceWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.InterfaceContent {
+  height: 150px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* --------------------------- */
+
+.RerollBtnBox {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.RerollBtn {
+  width: 150px;
+  height: 75px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* ------------------------------ */
+
+.ChampionBox {
+  height: 130px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 10px; */
+}
+
+.Champion {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.ChampionImgAndColor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.ChampionCost {
+  width: 30px;
+  height: 120px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cost-1 {
+  color: white;
+  background-color: #a4a4a4;
+}
+.cost-2 {
+  color: white;
+  background-color: #04b404;
+}
+.cost-3 {
+  color: white;
+  background-color: #0040ff;
+}
+.cost-4 {
+  color: white;
+  background-color: #8000ff;
+}
+.cost-5 {
+  color: white;
+  background-color: #f7d358;
+}
+
+.ChampionImg {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+
+.ChampionName {
+  width: 150px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}

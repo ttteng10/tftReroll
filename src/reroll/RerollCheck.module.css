@@ -1,0 +1,42 @@
+.CheckWrapper {
+  height: 60px;
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: darkcyan;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.CheckBox {
+  width: 50px;
+  height: 50px;
+  border-width: 1px;
+  border-radius: 10px;
+  border-style: solid;
+  box-sizing: content-box;
+}
+
+.CheckBoxImg {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+  border-width: 1px;
+  border-radius: 10px;
+  border-style: solid;
+}
+
+.Practice {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}

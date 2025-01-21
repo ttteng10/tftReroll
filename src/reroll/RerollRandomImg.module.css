@@ -1,0 +1,36 @@
+.RerollChampionImgWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.RerollChampionImgBox {
+  width: 150px;
+  height: 150px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 5px;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+}
+
+.RerollChampionImg {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.RerollChampionName {
+  font-size: 20px;
+}
