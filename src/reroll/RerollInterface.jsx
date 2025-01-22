@@ -3,11 +3,12 @@ import { RerollContext } from "./Reroll";
 import RerollCheck from "./RerollCheck";
 import styles from "./RerollInterface.module.css";
 import { InterfaceChampion } from "./InterFace.js";
+import Rerollpercent from "./Rerollpercent.jsx";
 
 //Lv8 1cost: 18% 2cost: 25% 3cost: 32% 4cost:22% 5cost: 3%
 //Lv9 1cost: 15% 2cost: 20% 3cost: 25% 4cost:30% 5cost: 10%
 export default function RerollInterface() {
-  const { gameMode, champion, gameLv } = useContext(RerollContext);
+  const { gameMode, champion, gameLv, borderCheck } = useContext(RerollContext);
   const [championArr, setChampionArr] = useState(InterfaceChampion(gameLv));
   const [checkNum, setCheckNum] = useState(0);
   const [clickidx, setClickidx] = useState([]);
@@ -96,6 +97,7 @@ export default function RerollInterface() {
   return (
     <div className={styles.InterfaceWrapper}>
       <RerollCheck mode={gameMode} checkNum={checkNum} result={result} />
+      <Rerollpercent />
       <div className={styles.InterfaceContent}>
         <div className={styles.RerollBtnBox}>
           <button className={styles.RerollBtn} onClick={() => startClick()}>
@@ -109,7 +111,11 @@ export default function RerollInterface() {
           {championArr.map((item, idx) => (
             <div
               key={idx}
-              className={styles.Champion}
+              className={`${
+                borderCheck && item.id === champion.id
+                  ? styles.ChampionBorder
+                  : styles.Champion
+              }`}
               onClick={() => userClick(item, idx)}
             >
               {!clickidx.includes(idx) && (

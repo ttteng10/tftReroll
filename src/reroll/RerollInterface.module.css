@@ -55,9 +55,21 @@
   height: 150px;
   margin: 0;
   padding: 0;
-  border-width: 1px;
+  border-width: 0.5px;
   border-style: solid;
   border-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.ChampionBorder {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  border-width: 2px;
+  border-style: solid;
+  border-color: red;
   display: flex;
   flex-direction: column;
 }

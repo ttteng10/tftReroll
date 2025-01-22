@@ -17,12 +17,15 @@ export const RerollContext = createContext({
   gameLv: Number,
   champion: {},
   setChampion: () => {},
+  borderCheck: Boolean,
+  setBorderCheck: () => {},
 });
 
 export default function Reroll() {
   const [mode, setMode] = useState("Easy");
   const [gameLv, setGameLv] = useState(8);
   const [champion, setChampion] = useState(Main4costImg());
+  const [borderCheck, setBorderCheck] = useState(false);
 
   useEffect(() => {
     if (gameLv === 4 || gameLv === 5) {
@@ -43,6 +46,8 @@ export default function Reroll() {
     gameLv: gameLv,
     champion: champion,
     setChampion: setChampion,
+    borderCheck: borderCheck,
+    setBorderCheck: setBorderCheck,
   };
 
   return (

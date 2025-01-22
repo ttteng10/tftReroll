@@ -14,13 +14,13 @@ export default function RerollRandomImg() {
             alt="champiom img"
           />
         ) : (
-          <p>loading...</p>
+          <p className={styles.loading}>loading...</p>
         )}
       </div>
       {champion && champion.name ? (
         <div className={styles.RerollChampionName}>{champion.name}</div>
       ) : (
-        <p>loading...</p>
+        <p className={styles.loading}>loading...</p>
       )}
     </div>
   );
