@@ -56,6 +56,11 @@ export default function RerollInterface() {
       reroll();
       setCheckNum(0);
       setResult();
+    } else if (startBtn === "RESTART") {
+      setTime(30);
+      reroll();
+      setCheckNum(0);
+      setResult();
     }
   }
 
