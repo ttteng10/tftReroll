@@ -2,13 +2,13 @@ import { useContext, useState, useEffect, useCallback } from "react";
 import { RerollContext } from "./Reroll";
 import RerollCheck from "./RerollCheck";
 import styles from "./RerollInterface.module.css";
-import InterfaceChampion from "./InterFace";
+import { InterfaceChampion } from "./InterFace.js";
 
 //Lv8 1cost: 18% 2cost: 25% 3cost: 32% 4cost:22% 5cost: 3%
 //Lv9 1cost: 15% 2cost: 20% 3cost: 25% 4cost:30% 5cost: 10%
 export default function RerollInterface() {
-  const { gameMode, champion } = useContext(RerollContext);
-  const [championArr, setChampionArr] = useState(InterfaceChampion());
+  const { gameMode, champion, gameLv } = useContext(RerollContext);
+  const [championArr, setChampionArr] = useState(InterfaceChampion(gameLv));
   const [checkNum, setCheckNum] = useState(0);
   const [clickidx, setClickidx] = useState([]);
   const [time, setTime] = useState(30);
@@ -16,10 +16,10 @@ export default function RerollInterface() {
   const [result, setResult] = useState();
 
   const reroll = useCallback(() => {
-    const newChampionArr = InterfaceChampion();
+    const newChampionArr = InterfaceChampion(gameLv);
     setChampionArr(newChampionArr);
     setClickidx([]);
-  }, []);
+  }, [gameLv]);
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -39,7 +39,7 @@ export default function RerollInterface() {
     reroll();
     setCheckNum(0);
     setResult();
-  }, [gameMode]);
+  }, [gameMode, gameLv]);
 
   function userClick(item, idx) {
     if (item.id === champion.id && !clickidx.includes(idx)) {

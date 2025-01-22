@@ -1,0 +1,76 @@
+.ModeButtons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+}
+
+.ModeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: darkgrey;
+  color: white;
+}
+
+.CheckButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: burlywood;
+  color: white;
+}
+
+.LvWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LvButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.LvButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: darkgrey;
+  color: white;
+}
+
+.LvCheckButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: burlywood;
+  color: white;
+}

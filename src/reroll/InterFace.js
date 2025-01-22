@@ -63,7 +63,7 @@ import Mordekaiser from "../assets/lolchessImg/cost5/Mordekaiser.png";
 import Rumble from "../assets/lolchessImg/cost5/Rumble.png";
 import Sevika from "../assets/lolchessImg/cost5/Sevika.jpg";
 
-export default function InterfaceChampion() {
+export function InterfaceChampion(lv) {
   const cost1 = [
     {
       id: "Amumu",
@@ -434,14 +434,71 @@ export default function InterfaceChampion() {
       cost: 5,
     },
   ];
-
-  const probabilities = {
+  let probabilities = {
     cost1: 0.18,
     cost2: 0.25,
     cost3: 0.32,
     cost4: 0.22,
     cost5: 0.03,
   };
+
+  if (lv === 4) {
+    probabilities = {
+      cost1: 0.55,
+      cost2: 0.3,
+      cost3: 0.15,
+      cost4: 0,
+      cost5: 0,
+    };
+  } else if (lv === 5) {
+    probabilities = {
+      cost1: 0.45,
+      cost2: 0.33,
+      cost3: 0.2,
+      cost4: 0.02,
+      cost5: 0,
+    };
+  } else if (lv === 6) {
+    probabilities = {
+      cost1: 0.3,
+      cost2: 0.4,
+      cost3: 0.25,
+      cost4: 0.05,
+      cost5: 0,
+    };
+  } else if (lv === 7) {
+    probabilities = {
+      cost1: 0.19,
+      cost2: 0.3,
+      cost3: 0.4,
+      cost4: 0.1,
+      cost5: 0.01,
+    };
+  } else if (lv === 8) {
+    probabilities = {
+      cost1: 0.18,
+      cost2: 0.25,
+      cost3: 0.32,
+      cost4: 0.22,
+      cost5: 0.03,
+    };
+  } else if (lv === 9) {
+    probabilities = {
+      cost1: 0.15,
+      cost2: 0.2,
+      cost3: 0.25,
+      cost4: 0.3,
+      cost5: 0.1,
+    };
+  } else if (lv === 10) {
+    probabilities = {
+      cost1: 0.05,
+      cost2: 0.1,
+      cost3: 0.2,
+      cost4: 0.4,
+      cost5: 0.25,
+    };
+  }
 
   // 배열들 및 결과 저장 변수
   const arrays = [cost1, cost2, cost3, cost4, cost5];
