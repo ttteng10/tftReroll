@@ -142,6 +142,7 @@ export default function RerollInterface() {
                       src={item.src}
                       alt={item.name}
                       className={styles.ChampionImg}
+                      loading="eager"
                     />
                   </div>
                   <p className={styles.ChampionName}>{item.name}</p>
