@@ -24,7 +24,10 @@ export default function RerollInterface() {
 
   useEffect(() => {
     const handleKeyPress = (event) => {
-      if (event.key === "d" || event.key === "D" || event.key === "ㅇ") {
+      if (
+        (event.key === "d" || event.key === "D" || event.key === "ㅇ") &&
+        startBtn === "RESTART"
+      ) {
         reroll();
       }
     };
@@ -34,7 +37,7 @@ export default function RerollInterface() {
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [reroll]);
+  }, [reroll, startBtn]);
   useEffect(() => {
     setCheckNum(0);
     reroll();
@@ -100,10 +103,17 @@ export default function RerollInterface() {
       <Rerollpercent />
       <div className={styles.InterfaceContent}>
         <div className={styles.RerollBtnBox}>
-          <button className={styles.RerollBtn} onClick={() => startClick()}>
+          <button className={styles.StartBtn} onClick={() => startClick()}>
             {startBtn}
           </button>
-          <button className={styles.RerollBtn} onClick={() => reroll()}>
+          <button
+            className={styles.RerollBtn}
+            onClick={() => {
+              if (startBtn === "RESTART") {
+                reroll();
+              }
+            }}
+          >
             새로고침(D)
           </button>
         </div>

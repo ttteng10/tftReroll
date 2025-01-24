@@ -27,6 +27,19 @@
   flex-direction: column;
 }
 
+.StartBtn {
+  width: 150px;
+  height: 75px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #0a6eff;
+  color: white;
+}
+
 .RerollBtn {
   width: 150px;
   height: 75px;
