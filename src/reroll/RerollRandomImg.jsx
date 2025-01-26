@@ -3,10 +3,13 @@ import { useContext } from "react";
 import { RerollContext } from "./Reroll";
 
 export default function RerollRandomImg() {
-  const { champion } = useContext(RerollContext);
+  const { champion, setDialogOpen } = useContext(RerollContext);
   return (
     <div className={styles.RerollChampionImgWrapper}>
-      <div className={styles.RerollChampionImgBox}>
+      <div
+        className={styles.RerollChampionImgBox}
+        onClick={() => setDialogOpen(true)}
+      >
         {champion && champion.src ? (
           <img
             className={styles.RerollChampionImg}

@@ -11,6 +11,8 @@ import {
   Main5costImg,
 } from "./Champion";
 import RerollModeLv from "./RerollModeLv";
+import SelectChampion from "./SelectChampion";
+import exclamation from "../assets/icons/exclamation.png";
 
 export const RerollContext = createContext({
   gameMode: "",
@@ -19,6 +21,7 @@ export const RerollContext = createContext({
   setChampion: () => {},
   borderCheck: Boolean,
   setBorderCheck: () => {},
+  setDialogOpen: () => {},
 });
 
 export default function Reroll() {
@@ -26,6 +29,7 @@ export default function Reroll() {
   const [gameLv, setGameLv] = useState(8);
   const [champion, setChampion] = useState(Main4costImg());
   const [borderCheck, setBorderCheck] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   useEffect(() => {
     if (gameLv === 4 || gameLv === 5) {
@@ -48,12 +52,31 @@ export default function Reroll() {
     setChampion: setChampion,
     borderCheck: borderCheck,
     setBorderCheck: setBorderCheck,
+    setDialogOpen: setDialogOpen,
   };
+
+  function showInformation() {
+    alert(
+      `Easy: 2성 찾기(기물 3개) Hard: 3성 찾기(기물 9개)\n 중앙 이미지 클릭 시 원하는 챔피언 선택 가능`
+    );
+  }
 
   return (
     <div className={styles.RerollWrapper}>
       <div className={styles.RerollContent}>
-        <header className={styles.RerollHeader}>TFT Reroll</header>
+        <header className={styles.RerollHeader}>
+          TFT Reroll
+          <div
+            className={styles.exclamationIconWrapper}
+            onClick={() => showInformation()}
+          >
+            <img
+              src={exclamation}
+              alt="introduce"
+              className={styles.exclamationIcon}
+            />
+          </div>
+        </header>
         <RerollModeLv
           gameMode={mode}
           setGameMode={setMode}
@@ -61,6 +84,7 @@ export default function Reroll() {
           setGameLv={setGameLv}
         />
         <RerollContext.Provider value={rerollValue}>
+          {dialogOpen && <SelectChampion />}
           <div className={styles.RerollMain}>
             <RerollRandomImg />
             <RerollInterface />
