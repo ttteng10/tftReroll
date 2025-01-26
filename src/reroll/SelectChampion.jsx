@@ -74,6 +74,7 @@ export default function SelectChampion() {
                 alt={item.name}
                 className={styles.costCham}
                 onClick={() => changMainChampion(item)}
+                loading="eager"
               />
             </div>
           ))}
